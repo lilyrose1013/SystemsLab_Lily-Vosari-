@@ -22,6 +22,9 @@ html, body {
   font-family: 'Send Flowers', "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  /* Make fonts larger across the site for better readability */
+  font-size: 18px; /* base size (can be adjusted) */
+  line-height: 1.45;
 }
 
 /* Make focus outlines visible for keyboard users */
@@ -90,6 +93,24 @@ html, body {
 .related-pages { margin-top: 28px; }
 .related-pages h2 { margin: 0 0 12px 0; color: var(--accent); }
 
+/* Increase heading sizes so they scale with the larger base font */
+h1 {
+  font-size: 2rem; /* ~36px with 18px base */
+  margin: 0 0 12px 0;
+  color: var(--muted);
+}
+
+h2, h3 {
+  font-weight: 700;
+}
+
+/* Slightly larger brand and navigation text */
+.brand { font-weight: 700; color: var(--accent); font-size: 1.25rem; }
+.nav-links a { font-size: 1rem; }
+
+.page-btn { font-size: 1rem; }
+.site-footer p { font-size: 0.95rem; }
+
 .page-links { display: flex; gap: 12px; flex-wrap: wrap; }
 .page-btn {
   display: inline-block;
@@ -115,5 +136,11 @@ html, body {
   .navbar { padding: 10px 12px; }
   .main-content, .site-footer { margin: 24px auto; }
   .collage-placeholder { padding: 28px; }
+}
+
+/* slightly reduce base font on very small screens to avoid overflow */
+@media (max-width: 360px) {
+  html, body { font-size: 16px; }
+  h1 { font-size: 1.6rem; }
 }
 
