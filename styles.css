@@ -39,6 +39,16 @@ html, body {
   box-shadow: var(--shadow);
 }
 
+/* Positioning for brand to sit at the far left of the viewport */
+.site-header { position: relative; }
+
+.brand {
+  position: absolute;
+  left: 16px; /* distance from the left edge */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .navbar {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -46,6 +56,8 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
+  /* make space on the left so the absolutely-positioned brand doesn't overlap nav links */
+  padding-left: 160px;
 }
 
 .main-content,
@@ -65,7 +77,7 @@ html, body {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 12px;
+  gap: 17px;
 }
 
 .nav-links a {
@@ -133,7 +145,7 @@ h2, h3 {
 
 /* small responsive tweaks */
 @media (max-width: 520px) {
-  .navbar { padding: 10px 12px; }
+  .navbar { padding: 10px 12px; padding-left: 12px; }
   .main-content, .site-footer { margin: 24px auto; }
   .collage-placeholder { padding: 28px; }
 }
