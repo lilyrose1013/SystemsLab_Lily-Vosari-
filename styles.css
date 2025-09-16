@@ -29,7 +29,7 @@ html, body {
 
 /* ========== Layout Containers ========== */
 .site-header {
-  background: white;
+  background: #dccafc;
   box-shadow: var(--shadow);
 }
 
