@@ -11,15 +11,14 @@
   --radius-md: 8px;
 }
 
-/* Import Google Font: Send Flowers */
-@import url('https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap');
+/* Font is loaded via <link> tags in the HTML head (preferred over @import for performance) */
 
 /* ========== Reset / Base ========== */
 * { box-sizing: border-box; }
 html, body {
   height: 100%;
   margin: 0;
-  /* Use the imported 'Send Flowers' font, fall back to common system fonts */
+  /* Use the 'Send Flowers' font (loaded from Google Fonts via <link>); fall back to common system fonts */
   font-family: 'Send Flowers', "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
