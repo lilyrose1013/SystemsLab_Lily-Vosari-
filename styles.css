@@ -107,13 +107,13 @@ html, body {
 
 /* Increase heading sizes so they scale with the larger base font */
 h1 {
-  font-size: 2rem; /* ~36px with 18px base */
+  font-size: 2.5rem; /* ~36px with 18px base */
   margin: 0 0 12px 0;
   color: var(--muted);
 }
 
-h2, h3 {
-  font-weight: 700;
+h2{
+  font-weight: 2rem;
 }
 
 /* Slightly larger brand and navigation text */
