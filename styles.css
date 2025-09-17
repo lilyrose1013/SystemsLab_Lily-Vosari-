@@ -101,6 +101,19 @@ html, body {
 .related-pages { margin-top: 28px; }
 .related-pages h2 { margin: 0 0 12px 0; color: var(--accent); }
 
+/* Collage image sizing */
+.collage-img {
+  display: block;
+  max-width: 60%; /* default: image will be at most 60% of container width */
+  height: auto;    /* maintain aspect ratio */
+  margin: 18px 0;  /* space above and below */
+  border-radius: 8px;
+}
+
+@media (max-width: 640px) {
+  .collage-img { max-width: 100%; }
+}
+
 h1 {
   font-size: 2.8rem;
   margin: 0 0 12px 0;
@@ -229,6 +242,19 @@ h3 {
   display: grid;
   place-content: center;
   text-align: center;
+}
+
+/* Grid centering modifiers: center content horizontally and vertically */
+.grid-box--center {
+  display: grid;
+  place-items: center; /* center grid cells */
+  padding: 18px;
+}
+
+.grid-item--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Explicit column count modifiers (optional overrides) */
