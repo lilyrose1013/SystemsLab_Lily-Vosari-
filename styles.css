@@ -1,8 +1,8 @@
-
+/* Primary stylesheet for the site */
 :root {
   --bg: #d8d0e7;
   --accent: #9295D0;
-  --accent-600: #5B61B2; 
+  --accent-600: #5B61B2;
   --muted: #3A345b;
   --text: #44146c;
   --shadow: 0 2px 4px rgba(11,22,33,0.06);
@@ -11,23 +11,20 @@
   --radius-md: 8px;
 }
 
-/* Font is loaded via <link> tags in the HTML head (preferred over @import for performance) */
+/* Font is loaded via <link> in the HTML head (preferred over @import for performance) */
 
 /* ========== Reset / Base ========== */
 * { box-sizing: border-box; }
 html, body {
   height: 100%;
   margin: 0;
-  /* Use the 'Send Flowers' font (loaded from Google Fonts via <link>); fall back to common system fonts */
   font-family: 'Send Flowers', "Segoe UI", Roboto, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  /* Make fonts larger across the site for better readability */
-  font-size: 18px; /* base size (can be adjusted) */
+  font-size: 18px;
   line-height: 1.45;
 }
 
-/* Make focus outlines visible for keyboard users */
 :focus {
   outline: 3px solid rgba(43,108,176,0.15);
   outline-offset: 2px;
@@ -37,16 +34,17 @@ html, body {
 .site-header {
   background: #edeaf1;
   box-shadow: var(--shadow);
+  position: relative;
 }
-
-/* Positioning for brand to sit at the far left of the viewport */
-.site-header { position: relative; }
 
 .brand {
   position: absolute;
-  left: 16px; /* distance from the left edge */
+  left: 16px;
   top: 50%;
   transform: translateY(-50%);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 3.25rem;
 }
 
 .navbar {
@@ -56,7 +54,6 @@ html, body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  /* make space on the left so the absolutely-positioned brand doesn't overlap nav links */
   padding-left: 160px;
 }
 
@@ -70,8 +67,6 @@ html, body {
 .site-footer { color: var(--muted); }
 
 /* ========== Branding & Nav ========== */
-.brand { font-weight: 700; color: var(--accent); }
-
 .nav-links {
   list-style: none;
   margin: 0;
@@ -86,6 +81,7 @@ html, body {
   padding: 8px 10px;
   border-radius: var(--radius-sm);
   display: inline-block;
+  font-size: 22pt;
 }
 
 .nav-links a:hover { background: rgba(0,0,0,0.03); color: var(--accent); }
@@ -101,24 +97,19 @@ html, body {
   text-align: center;
 }
 
-
 .related-pages { margin-top: 28px; }
 .related-pages h2 { margin: 0 0 12px 0; color: var(--accent); }
 
-/* Increase heading sizes so they scale with the larger base font */
 h1 {
-  font-size: 2.5rem; /* ~36px with 18px base */
+  font-size: 2.5rem;
   margin: 0 0 12px 0;
   color: var(--muted);
 }
 
-h2{
-  font-weight: 2rem;
+h2 {
+  font-size: 1.25rem;
+  margin: 0 0 12px 0;
 }
-
-/* Slightly larger brand and navigation text */
-.brand { font-weight: 700; color: var(--accent); font-size: 3.25rem; }
-.nav-links a { font-size: 22pt; }
 
 .page-btn { font-size: 1rem; }
 .site-footer p { font-size: 1.5rem; }
@@ -134,7 +125,7 @@ h2{
 }
 .page-btn:hover { background: var(--accent-600); }
 
-/* ========== Utilities (small helpers) ========== */
+/* ========== Utilities ========== */
 .sr-only {
   position: absolute !important;
   width: 1px; height: 1px;
@@ -156,3 +147,64 @@ h2{
   h1 { font-size: 1.6rem; }
 }
 
+/* ========== NEW: Grid Box Component ========== */
+.grid-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* responsive */
+  gap: 16px;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.4); /* subtle contrast with --bg */
+  box-shadow: var(--shadow);
+}
+
+.grid-item {
+  background: #fff;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 160ms ease, box-shadow 160ms ease; /* fast responsive feel */
+}
+
+.grid-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(11,22,33,0.10);
+}
+
+.grid-item h3 {
+  margin: 0 0 6px 0;
+  color: var(--muted);
+  font-size: 1.25rem;
+}
+
+.grid-item p {
+  margin: 0 0 10px 0;
+  color: var(--text);
+}
+
+/* Variant: fixed square box (good for icons, images) */
+.grid-item--square {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+/* Explicit column count modifiers (optional overrides) */
+.grid-box.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-box.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-box.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Smaller screens: slightly smaller min width to keep 2-up */
+@media (max-width: 640px) {
+  .grid-box { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+}
+
+/* Motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .grid-item { transition: none; }
+}
