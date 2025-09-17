@@ -73,6 +73,7 @@ html, body {
   padding: 0;
   display: flex;
   gap: 17px;
+  flex-wrap: wrap; /* allow links to wrap to next line instead of overlapping */
 }
 
 .nav-links a {
@@ -139,6 +140,38 @@ h2 {
   .navbar { padding: 10px 12px; padding-left: 12px; }
   .main-content, .site-footer { margin: 24px auto; }
   .collage-placeholder { padding: 28px; }
+}
+
+/* Adjust navbar layout on medium and small screens */
+@media (max-width: 800px) {
+  .navbar {
+    padding-left: 12px; /* free space when brand becomes static */
+    flex-wrap: wrap; /* allow content to wrap vertically */
+    align-items: flex-start;
+  }
+
+  .brand {
+    position: relative; /* place brand in flow on smaller screens */
+    left: 0;
+    top: 0;
+    transform: none;
+    font-size: 2.25rem;
+    margin-bottom: 8px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .nav-links a { font-size: 18pt; padding: 6px 8px; }
+}
+
+@media (max-width: 420px) {
+  .brand { font-size: 1.9rem; }
+  .nav-links a { font-size: 16pt; padding: 5px 6px; }
+  .nav-links { gap: 8px; }
 }
 
 /* slightly reduce base font on very small screens to avoid overflow */
