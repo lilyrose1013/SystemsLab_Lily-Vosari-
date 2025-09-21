@@ -248,4 +248,68 @@ h3 {
 }
 
 
+.grid-container2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0; 
+  padding: 0; 
+}
+
+.grid-container2 > div {
+  margin: 0; 
+}
+
+.grid-container2 img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+/* Wrapper for both grids so we can position container2 over container1 */
+.grids-wrap {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 24px auto;
+}
+
+.grid-container2 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 0px;
+  padding: 0;
+  z-index: 5;
+}
+
+.grid-container2 > div { margin: 0; }
+
+.grid-container2 img { object-fit: cover; }
+
+
+.grid-container3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0; 
+  padding: 0; 
+  border: 1px solid #7f5a93;
+  /* allow overlapping by positioning absolutely within .grids-wrap */
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  width: 84%;
+  height: 84%;
+  z-index: 10; /* above grid-container2 (z-index:5) */
+  background: transparent;
+}
+
+.grid-container3 > div {
+  margin: 0; 
+}
 
