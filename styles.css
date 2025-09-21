@@ -5,7 +5,7 @@
   --accent-600: #5B61B2;
   --muted: #3A345b;
   --text: #44146c;
-  --overlay-text-color: #969398;
+  --overlay-text-color: #9b54f1;
   --shadow: 0 2px 4px rgba(11,22,33,0.06);
   --max-width: 900px;
   --radius-sm: 10px;
@@ -155,7 +155,7 @@
     font-size: 1.1rem;
     pointer-events: auto; /* allow user to select/copy text if needed */
   }
-    font-size: 1.25rem;
+    font-size: 1.65rem;
     margin: 0 0 12px 0;
   }
 
@@ -322,7 +322,7 @@
     color: #9100ae;
     text-shadow: 10px 10px 6px rgba(0, 0, 0, 0.6);
     font-size: 2rem;
-    pointer-events: auto; 
+    pointer-events: auto;
   }
 
   .grid-container3 > div {
