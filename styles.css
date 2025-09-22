@@ -1,4 +1,5 @@
 
+
 :root {
   --bg: #d8d0e7;
   --accent: #9295D0;
@@ -8,28 +9,16 @@
   --overlay-text-color: #9b54f1;
   --shadow: 0 2px 4px rgba(11,22,33,0.06);
   --max-width: 900px;
-  --radius-sm: 10px;
-  :root {
-    --bg: #d8d0e7;
-    --accent: #9295D0;
-    --accent-600: #5B61B2;
-    --muted: #3A345b;
-    --text: #44146c;
-    --shadow: 0 2px 4px rgba(11,22,33,0.06);
-    --max-width: 900px;
-    --radius-sm: 6px;
-    --radius-md: 8px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
 
-
-    --fs-sm: 0.875rem;   /* ~16px */
-    --fs-base: 1rem;     /* 18px */
-    --fs-md: 1.125rem;   /* 20px */
-    --fs-lg: 1.5rem;     /* 24px */
-    --fs-xl: 2rem;       /* 32px */
-    --fs-2xl: 2.8rem;    /* ~45px */
-  }
-
-
+  --fs-sm: 0.875rem;   /* ~16px */
+  --fs-base: 1rem;     /* 18px */
+  --fs-md: 1.125rem;   /* 20px */
+  --fs-lg: 1.5rem;     /* 24px */
+  --fs-xl: 2rem;       /* 32px */
+  --fs-2xl: 2.8rem;    /* ~45px */
+}
   * { box-sizing: border-box; }
 
   html, body {
@@ -155,8 +144,17 @@
     font-size: 1.1rem;
     pointer-events: auto; /* allow user to select/copy text if needed */
   }
+
+  /* Base heading styles */
+  h1 {
     font-size: 1.65rem;
     margin: 0 0 12px 0;
+  }
+
+  /* Utility: center content horizontally */
+  .centered {
+    text-align: center;
+    margin: 0.75rem 0; /* small vertical spacing */
   }
 
   /* ========== Links / Buttons ========== */
@@ -168,8 +166,12 @@
 
   .page-btn {
     font-size: var(--fs-base);
-    display: inline-block;
+    display: block;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
     padding: 10px 14px;
+    margin: 0 auto;
     background: var(--accent);
     color: #fff;
     text-decoration: none;
@@ -180,7 +182,7 @@
 
   .site-footer p { font-size: 1.5rem; }
 
-  /* ========== Utilities ========== */
+
   .sr-only {
     position: absolute !important;
     width: 1px; height: 1px;
@@ -236,6 +238,7 @@
     h1 { font-size: 1.6rem; }
   }
 
+  /* container1 = polaroid frame */
   .grid-container1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -255,7 +258,7 @@
     object-fit: cover; 
   }
 
-
+  /* grid 2 = tea images */
   .grid-container2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -263,11 +266,11 @@
     gap: 0; 
     padding: 0; 
   }
-
   .grid-container2 > div {
     margin: 0; 
   }
 
+  /* placement of image grid */
   .grid-container2 img {
     display: block;
     width: 100%;
@@ -275,7 +278,7 @@
     object-fit: cover; 
   }
 
-  /* Wrapper for both grids so we can position container2 over container1 */
+  /* allowance for overlapping grids */
   .grids-wrap {
     position: relative;
     width: 100%;
@@ -283,6 +286,7 @@
     margin: 24px auto;
   }
 
+  /* image grid position */
   .grid-container2 {
     position: absolute;
     top: 0%;
@@ -299,6 +303,7 @@
 
   .grid-container2 img { object-fit: cover; }
 
+  /* text overlay image */
     .grid-container3 {
     position: absolute;
     top: 40px;
@@ -313,7 +318,6 @@
     z-index: 20;
     pointer-events: none;
   }
-
   .grid-container3 h4 {
     margin: 0;
     display: flex;
@@ -327,4 +331,24 @@
 
   .grid-container3 > div {
     margin: 0; 
+  }
+
+  /* borders */
+
+  /* bottom container for cups image(s) */
+  .grid-container4 {
+    display: grid;
+    place-items: center; /* centers horizontally and vertically */
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0;
+    padding: 0;
+    margin: 24px 0; /* give spacing from surrounding content */
+  }
+
+  .grid-container4 img {
+    max-width: 320px; /* limit size so it's centered nicely */
+    width: 100%;
+    height: auto;
+    display: block;
   }
