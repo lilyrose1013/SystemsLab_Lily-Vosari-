@@ -334,20 +334,18 @@
   }
 
   /* borders */
-
-  /* bottom container for cups image(s) */
   .grid-container4 {
     display: grid;
-    place-items: center; /* centers horizontally and vertically */
+    place-items: center;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
     gap: 0;
     padding: 0;
-    margin: 24px 0; /* give spacing from surrounding content */
+    margin: 24px 0; 
   }
-
+  /* sizing */
   .grid-container4 img {
-    max-width: 320px; /* limit size so it's centered nicely */
+    max-width: 320px; 
     width: 100%;
     height: auto;
     display: block;
@@ -356,19 +354,32 @@
   .grid-container5 {
     display: grid;
     place-items: center;
-    grid-template-columns: repeat(5, 1fr);
-    /* use automatic row sizing so each image keeps its aspect ratio */
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 8px;
     padding: 0;
     margin: 0 0 24px 0;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
   }
   .grid-container5 > div { margin: 0; }
   .grid-container5 > div img {
-    display: block;
+    display: grid;
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
-    border-radius: 6px;
+   
   }
+
+  /* Center the garden image (5th item) on the second row */
+  .grid-container5 > div:nth-child(5) {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    align-self: center;
+    justify-self: center;
+    max-width: 100%;
+  }
+
