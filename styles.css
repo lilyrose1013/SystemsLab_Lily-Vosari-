@@ -352,3 +352,23 @@
     height: auto;
     display: block;
   }
+
+  .grid-container5 {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    /* use automatic row sizing so each image keeps its aspect ratio */
+    grid-auto-rows: auto;
+    gap: 8px;
+    padding: 0;
+    margin: 0 0 24px 0;
+    width: 100%;
+  }
+  .grid-container5 > div { margin: 0; }
+  .grid-container5 > div img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+  }
