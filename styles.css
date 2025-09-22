@@ -30,7 +30,7 @@
   }
 
   :focus {
-    /* why: visible focus for keyboard users */
+ 
     outline: 3px solid rgba(43,108,176,0.15);
     outline-offset: 2px;
   }
@@ -87,7 +87,7 @@
     padding: 8px 10px;
     border-radius: var(--radius-sm);
     display: inline-block;
-    font-size: 1.625rem; /* ~26px */
+    font-size: 1.625rem; 
   }
 
   .nav-links a:hover { background: rgba(0,0,0,0.03); color: var(--accent); }
@@ -115,7 +115,7 @@
     border-radius: 8px;
   }
 
-  /* Variant: force grid-box to single horizontal row */
+  /* Horizontal scroll row */
   .grid-box--row {
     display: flex;
     flex-direction: row;
