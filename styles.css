@@ -1,5 +1,3 @@
-
-
 :root {
   --bg: #d8d0e7;
   --accent: #9295D0;
@@ -142,7 +140,7 @@
     color: var(--overlay-text-color) !important; /* keep text visible over images */
     text-shadow: 0 2px 6px rgba(0,0,0,0.6);
     font-size: 1.1rem;
-    pointer-events: auto; /* allow user to select/copy text if needed */
+    pointer-events: auto; 
   }
 
   /* Base heading styles */
@@ -154,7 +152,7 @@
   /* Utility: center content horizontally */
   .centered {
     text-align: center;
-    margin: 0.75rem 0; /* small vertical spacing */
+    margin: 0.75rem 0; 
   }
 
   /* ========== Links / Buttons ========== */
@@ -374,7 +372,7 @@
    
   }
 
-  /* Center the garden image (5th item) on the second row */
+  /* Center the image (5th item) on the second row */
   .grid-container5 > div:nth-child(5) {
     grid-column: 3 / span 1;
     grid-row: 2 / 3;
@@ -389,8 +387,9 @@
     top: 50px;
     left: 0;
     width: 101%;
-    height: 100%;
+    height: 60%;
     display: grid;
+    row-gap: 40px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 0;
@@ -408,7 +407,11 @@
     font-size: 2rem;
     pointer-events: auto;
   }
-
+.grid-container6 h4:nth-of-type(2) {
+  justify-content: flex-start; 
+  text-align: left;
+  padding-left: 12px; 
+}
   .grid-container6 > div {
     margin: 0; 
   }
